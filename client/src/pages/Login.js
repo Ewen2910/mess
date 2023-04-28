@@ -12,8 +12,8 @@ const Login = ({ socket }) => {
     const getConnection = async (e) => {
         sessionStorage.setItem("user_name", username);
         socket.emit("connection", username)
-        sessionStorage.setItem("room", room);
-        socket.emit("join_room", room)
+        // sessionStorage.setItem("room", room);
+        // socket.emit("join_room", room)
         // console.log(socket.id + " " + room)
         navigation("/chat", { replace: true });
         // window.location.reload(false);
