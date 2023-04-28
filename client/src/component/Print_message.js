@@ -1,6 +1,6 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import '../style/Chat.css'
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 import ScrollToBottom from "react-scroll-to-bottom";
 
 export default function Print_message(props) {
