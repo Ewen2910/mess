@@ -27,20 +27,20 @@ io.on('connection', function (socket) {
     //             socket.emit("UserName", response.data)
     //         })
     // })
-    socket.on("join_friend", data => {
-        query.connection(data)
-        query.get_conv(data, function (dt, err) {
-            if (err) {
-                // error handling code goes here
-                console.log("ERROR : ", err);
-            } else {
-                console.log(dt)
-                io.to(data).emit('r_mess_first', dt)
+    // socket.on("join_friend", data => {
+    //     query.connection(data)
+    //     query.get_conv(data, function (dt, err) {
+    //         if (err) {
+    //             // error handling code goes here
+    //             console.log("ERROR : ", err);
+    //         } else {
+    //             console.log(dt)
+    //             io.to(data).emit('r_mess_first', dt)
 
-            }
+    //         }
 
-        });
-    })
+    //     });
+    // })
     socket.on('s_mess', data => {
         if (data.room != "") {
             io.to(data.room).emit('r_mess', data)
@@ -51,25 +51,25 @@ io.on('connection', function (socket) {
         // })
         // console.log(query.get_list_user())
     })
-    socket.on("connection", data => {
-        query.get_friends(data, function (dt, err) {
-            if (err) {
-                console.log("ERROR : ", err);
-            } else {
-                var a = []
-                for (const d of dt) {
-                    e = d.TABLE_NAME.split("_")
-                    if (e[0] === data)
-                        a.push(e[1])
-                    else
-                        a.push(e[0])
-                }
-                console.log(a)
-                socket.emit('get_friend', a)
-            }
+    // socket.on("connection", data => {
+    //     query.get_friends(data, function (dt, err) {
+    //         if (err) {
+    //             console.log("ERROR : ", err);
+    //         } else {
+    //             var a = []
+    //             for (const d of dt) {
+    //                 e = d.TABLE_NAME.split("_")
+    //                 if (e[0] === data)
+    //                     a.push(e[1])
+    //                 else
+    //                     a.push(e[0])
+    //             }
+    //             console.log(a)
+    //             socket.emit('get_friend', a)
+    //         }
 
-        });
-    })
+    //     });
+    // })
     // socket.emit("get_list_user", query.get_list_user(function (result) {
     //     console.log(result)
     // }))

@@ -24,7 +24,7 @@ function Chat({ socket }) {
     const [friend, setFriend] = useState("");
     const [messageList, setMessageList] = useState([]);
     const [_room, setRoom] = useState("");
-    const [friend_select, get_friend_select] = useState([])
+    // const [friend_select, get_friend_select] = useState([])
 
     useEffect(() => {
         // socket.emit("connection", username)
@@ -43,7 +43,7 @@ function Chat({ socket }) {
         items.sort((a, b) => a.localeCompare(b, 'fr', { ignorePunctuation: true }));
         setRoom(items[0] + "_" + items[1])
         console.log(items)
-        socket.emit('join_friend', items[0] + "_" + items[1]);
+        // socket.emit('join_friend', items[0] + "_" + items[1]);
         socket.on("r_mess_first", function (data) {
             console.log("hey")
             console.log(data)
