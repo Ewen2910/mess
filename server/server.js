@@ -44,7 +44,7 @@ io.on('connection', function (socket) {
     socket.on('s_mess', data => {
         if (data.room != "") {
             io.to(data.room).emit('r_mess', data)
-            query.save_mess(data.room, data.username, data.text)
+            // query.save_mess(data.room, data.username, data.text)
         }
         // query.get_list_user(function (data) {
         //     console.log(data)
