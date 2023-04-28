@@ -46,11 +46,11 @@ io.on('connection', function (socket) {
             io.to(data.room).emit('r_mess', data)
             query.save_mess(data.room, data.username, data.text)
         }
-        query.get_list_user(function (data) {
-            console.log(data)
-        })
-        console.log(query.get_list_user())
+        // query.get_list_user(function (data) {
+        //     console.log(data)
     })
+    // console.log(query.get_list_user())
+    // })
     // socket.on("connection", data => {
     //     query.get_friends(data, function (dt, err) {
     //         if (err) {
