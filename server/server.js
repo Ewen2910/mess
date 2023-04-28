@@ -21,35 +21,35 @@ io.on('connection', function (socket) {
         console.log(data)
         socket.join(data);
     });
-    // socket.on("GetUserName", data => {
-    //     axios.get('http://localhost:3001/GetUser')
-    //         .then(function (response) {
-    //             socket.emit("UserName", response.data)
-    //         })
-    // })
-    // socket.on("join_friend", data => {
-    //     query.connection(data)
-    //     query.get_conv(data, function (dt, err) {
-    //         if (err) {
-    //             // error handling code goes here
-    //             console.log("ERROR : ", err);
-    //         } else {
-    //             console.log(dt)
-    //             io.to(data).emit('r_mess_first', dt)
+    socket.on("GetUserName", data => {
+        axios.get('http://localhost:3001/GetUser')
+            .then(function (response) {
+                socket.emit("UserName", response.data)
+            })
+    })
+    socket.on("join_friend", data => {
+        query.connection(data)
+        query.get_conv(data, function (dt, err) {
+            if (err) {
+                // error handling code goes here
+                console.log("ERROR : ", err);
+            } else {
+                console.log(dt)
+                io.to(data).emit('r_mess_first', dt)
 
-    //         }
+            }
 
-    //     });
-    // })
+        });
+    })
     socket.on('s_mess', data => {
         if (data.room != "") {
             io.to(data.room).emit('r_mess', data)
-            // query.save_mess(data.room, data.username, data.text)
+            query.save_mess(data.room, data.username, data.text)
         }
-        // query.get_list_user(function (data) {
-        //     console.log(data)
-        // })
-        // console.log(query.get_list_user())
+        query.get_list_user(function (data) {
+            console.log(data)
+        })
+        console.log(query.get_list_user())
     })
     // socket.on("connection", data => {
     //     query.get_friends(data, function (dt, err) {

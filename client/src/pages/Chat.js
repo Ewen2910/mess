@@ -43,7 +43,7 @@ function Chat({ socket }) {
         items.sort((a, b) => a.localeCompare(b, 'fr', { ignorePunctuation: true }));
         setRoom(items[0] + "_" + items[1])
         console.log(items)
-        // socket.emit('join_friend', items[0] + "_" + items[1]);
+        socket.emit('join_friend', items[0] + "_" + items[1]);
         socket.on("r_mess_first", function (data) {
             console.log("hey")
             console.log(data)
