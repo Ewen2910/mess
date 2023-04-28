@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ScrollToBottom from "react-scroll-to-bottom";
 import '../style/Chat.css'
-import "bootstrap/dist/css/bootstrap.min.css";
-import Button from 'react-bootstrap/Button';
-import Navbar from 'react-bootstrap/Navbar';
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import Button from 'react-bootstrap/Button';
+// import Navbar from 'react-bootstrap/Navbar';
 import Print_message from '../component/Print_message';
 import {
     MDBContainer,

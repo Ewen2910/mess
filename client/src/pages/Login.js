@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { useNavigate } from 'react-router';
-import { Socket } from 'socket.io-client';
-import io from 'socket.io-client';
+// import { Socket } from 'socket.io-client';
+// import io from 'socket.io-client';
 
 const Login = ({ socket }) => {
     const [username, setUsername] = useState("");
