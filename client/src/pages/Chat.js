@@ -24,7 +24,7 @@ function Chat({ socket }) {
     const [friend, setFriend] = useState("");
     const [messageList, setMessageList] = useState([]);
     const [_room, setRoom] = useState("");
-    // const [friend_select, get_friend_select] = useState([])
+    const [friend_select, get_friend_select] = useState([])
 
     useEffect(() => {
         // socket.emit("connection", username)
