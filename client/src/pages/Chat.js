@@ -32,10 +32,10 @@ function Chat({ socket }) {
         //     console.log(data)
         //     get_friend_select(data)
         // })
-        socket.emit("GetUserName", "");
-        socket.on("UserName", function (data) {
-            sessionStorage.setItem("user_name", data);
-        })
+        // socket.emit("GetUserName", "");
+        // socket.on("UserName", function (data) {
+        //     sessionStorage.setItem("user_name", data);
+        // })
     }, []);
 
     const join_friend = async () => {

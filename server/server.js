@@ -21,12 +21,12 @@ io.on('connection', function (socket) {
         console.log(data)
         socket.join(data);
     });
-    socket.on("GetUserName", data => {
-        axios.get('http://localhost:3001/GetUser')
-            .then(function (response) {
-                socket.emit("UserName", response.data)
-            })
-    })
+    // socket.on("GetUserName", data => {
+    //     axios.get('http://localhost:3001/GetUser')
+    //         .then(function (response) {
+    //             socket.emit("UserName", response.data)
+    //         })
+    // })
     socket.on("join_friend", data => {
         query.connection(data)
         query.get_conv(data, function (dt, err) {

@@ -1,4 +1,4 @@
-//import './App.css';
+// import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from './pages/Chat';
 // import Chat from './pages/Chat_';
@@ -13,14 +13,13 @@ const socket = io('http://localhost:8000');
 
 export default function App() {
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route exact path="/" element={
-    //       <Chat socket={socket} />} />
-    //     <Route exact path="/Chat" element={<Chat socket={socket} />} />
-    //   </Routes>
-    // </Router>
-    <Chat socket={socket} />
+    <Router>
+      <Routes>
+        <Route exact path="/" element={
+          <Login socket={socket} />} />
+        <Route exact path="/Chat" element={<Chat socket={socket} />} />
+      </Routes>
+    </Router>
   );
 
 }
