@@ -6,7 +6,7 @@ import Login from './pages/Login';
 import io, { Socket } from 'socket.io-client';
 import { useState } from 'react';
 
-const socket = io('http://3.145.154.167:8000');
+const socket = io('http://3.135.207.239:8000');
 // const socket = io('http://localhost:8000');
 
 //const socket = io('http://192.168.1.166:8000');
